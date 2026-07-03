@@ -49,6 +49,7 @@ function renderArtistCards(){
 const grid=document.getElementById("artistGrid");
 
 grid.innerHTML="";
+grid.className="";
 
 
 if(company.groups.length===0){
@@ -57,12 +58,7 @@ grid.innerHTML=`
 
 <div class="empty-artist">
 
-<div class="artist-empty-wrap">
-
 <div class="artist-empty">
-    <div class="artist-empty-icon">
-        <i data-lucide="mic-vocal"></i>
-    </div>
 
     <span class="artist-empty-label">
         YOUR FIRST ARTIST
@@ -88,6 +84,7 @@ return;
 
 }
 
+grid.className="artist-grid";
 
 company.groups.forEach(group=>{
 
