@@ -1,0 +1,781 @@
+/* =========================
+   STARFORGE DASHBOARD FINAL
+========================= */
+
+:root{
+    --sf-gold:#C8A46B;
+    --sf-gold-hover:#B8945A;
+    --sf-gold-bg:#FCF7EF;
+
+    --sf-navy:#1E2640;
+    --sf-text:#7D869C;
+
+    --sf-border:#ECE6DC;
+
+    --sf-card:#FFFFFF;
+    --sf-bg:#FFFFFF;
+
+    --sf-scroll:#DCCFB9;
+}
+
+
+/* =========================
+   APP
+========================= */
+
+#app{
+    display:flex;
+    width:100%;
+    height:100vh;
+
+    background:var(--sf-bg);
+}
+
+#mainContent{
+    flex:1;
+
+    width:100%;
+    min-width:0;
+
+    padding:20px 24px;
+
+    overflow-y:auto;
+
+    background:white;
+}
+
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:24px;
+}
+
+.page-title{
+    display:flex;
+    align-items:center;
+
+    gap:14px;
+}
+
+.page-title h1{
+    font-size:28px;
+    font-weight:800;
+
+    color:var(--sf-navy);
+}
+
+.page-title span{
+    color:var(--sf-gold);
+
+    font-size:20px;
+}
+
+.page-title small{
+    color:var(--sf-text);
+
+    font-size:14px;
+
+    white-space:nowrap;
+
+    flex-shrink:0;
+}
+
+.top-actions{
+    display:flex;
+    align-items:center;
+
+    gap:16px;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box{
+    display:flex;
+    align-items:center;
+
+    gap:10px;
+
+    width:220px;
+    height:42px;
+
+    padding:0 18px;
+
+    background:white;
+
+    border:1px solid var(--sf-border);
+    border-radius:16px;
+}
+
+.search-box input{
+    flex:1;
+
+    border:none;
+    outline:none;
+
+    background:none;
+
+    font-size:14px;
+}
+
+.icon-btn{
+    width:42px;
+    height:42px;
+
+    border:none;
+    border-radius:14px;
+
+    background:white;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.04);
+}
+
+.icon-btn:hover{
+    background:var(--sf-gold-bg);
+}
+
+.date-box{
+    display:flex;
+    align-items:center;
+
+    gap:14px;
+
+    padding:14px 20px;
+
+    background:white;
+
+    border:1px solid var(--sf-border);
+    border-radius:16px;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.04);
+}
+
+.date-box span{
+    display:block;
+
+    font-size:12px;
+
+    color:var(--sf-text);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero-layout{
+    display:grid;
+    grid-template-columns:3fr 1.3fr;
+
+    gap:16px;
+
+    margin-bottom:20px;
+}
+
+.hero-banner{
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    height:460px;
+}
+
+.banner-image{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.banner-overlay{
+    position:absolute;
+
+    left:50px;
+    top:70px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:12px;
+
+    color:var(--sf-navy);
+}
+
+.banner-overlay p{
+    font-size:28px;
+    font-weight:300;
+}
+
+.banner-overlay h1{
+    font-size:72px;
+    font-weight:900;
+}
+
+.banner-overlay span{
+    font-size:30px;
+    font-weight:600;
+}
+
+.banner-overlay small{
+    font-size:22px;
+
+    opacity:.8;
+}
+
+
+/* =========================
+   SCHEDULE
+========================= */
+
+.schedule-card{
+    background:white;
+
+    border:1px solid var(--sf-border);
+    border-radius:24px;
+
+    padding:24px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.03);
+}
+
+.schedule-kpi{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:12px;
+
+    margin:20px 0 28px;
+}
+
+.mini-kpi{
+    position:relative;
+
+    text-align:center;
+
+    padding:18px;
+
+    background:var(--sf-gold-bg);
+
+    border:1px solid rgba(200,164,107,.15);
+    border-radius:16px;
+}
+
+.mini-kpi small{
+    position:absolute;
+
+    left:16px;
+    top:14px;
+
+    font-size:18px;
+    font-weight:800;
+
+    color:var(--sf-gold);
+}
+
+.mini-kpi h2{
+    margin-top:10px;
+
+    font-size:28px;
+
+    color:var(--sf-navy);
+}
+
+.mini-kpi span{
+    font-size:13px;
+
+    color:var(--sf-text);
+}
+
+.schedule-list{
+    display:flex;
+    flex-direction:column;
+
+    gap:24px;
+}
+
+.schedule-item{
+    display:flex;
+
+    gap:20px;
+}
+
+.schedule-item strong{
+    width:60px;
+
+    color:var(--sf-navy);
+}
+
+.schedule-item div{
+    display:flex;
+    flex-direction:column;
+
+    gap:4px;
+}
+
+.schedule-item b{
+    font-size:15px;
+}
+
+.schedule-item span{
+    font-size:13px;
+
+    color:var(--sf-text);
+}
+
+
+/* =========================
+   KPI
+========================= */
+
+.kpi-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    gap:16px;
+
+    margin-bottom:20px;
+}
+
+.kpi-card{
+    min-height:120px;
+
+    padding:16px;
+
+    background:white;
+
+    border:1px solid var(--sf-border);
+    border-radius:24px;
+
+    transition:.3s;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.03);
+}
+
+.kpi-card:hover{
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+}
+
+.kpi-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:20px;
+}
+
+.kpi-top span{
+    font-size:15px;
+    font-weight:700;
+
+    color:#444;
+}
+
+.kpi-icon{
+    width:42px;
+    height:42px;
+
+    border-radius:14px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.gold{
+    background:#FFF5E8;
+    color:var(--sf-gold);
+}
+
+.purple{
+    background:var(--sf-gold-bg);
+    color:var(--sf-gold-hover);
+}
+
+.green{
+    background:#F7F4EE;
+    color:#8E7756;
+}
+
+.blue{
+    background:#F4EFE8;
+    color:#A78963;
+}
+
+.kpi-card h2{
+    margin-bottom:8px;
+
+    font-size:24px;
+    font-weight:800;
+
+    color:var(--sf-navy);
+}
+
+.kpi-card h2 small{
+    font-size:18px;
+    color:#999;
+}
+
+.kpi-card small{
+    display:block;
+
+    margin-bottom:20px;
+
+    color:var(--sf-text);
+}
+
+.kpi-card p{
+    font-size:14px;
+    font-weight:600;
+
+    color:#2F8A5B;
+}
+
+
+/* =========================
+   DASHBOARD GRID
+========================= */
+
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:1.2fr 1.2fr 1.4fr;
+
+    gap:16px;
+
+    margin-bottom:20px;
+}
+
+.dashboard-card{
+    min-height:240px;
+
+    padding:18px;
+
+    background:white;
+
+    border:1px solid var(--sf-border);
+    border-radius:24px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.03);
+}
+
+.card-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:24px;
+}
+
+.card-header h3{
+    font-size:20px;
+    font-weight:800;
+
+    color:var(--sf-navy);
+}
+
+.card-header a{
+    display:flex;
+    align-items:center;
+
+    gap:4px;
+
+    font-size:13px;
+
+    color:var(--sf-text);
+
+    text-decoration:none;
+
+    transition:.2s;
+}
+
+.card-header a:hover{
+    color:var(--sf-gold);
+}
+
+
+/* =========================
+   EMPTY GROUP
+========================= */
+
+.empty-group{
+    height:100%;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    gap:16px;
+
+    text-align:center;
+}
+
+.empty-icon{
+    width:100px;
+    height:100px;
+
+    border-radius:50%;
+
+    background:var(--sf-gold-bg);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:var(--sf-gold);
+}
+
+.empty-icon svg{
+    width:50px;
+    height:50px;
+}
+
+.empty-group h4{
+    font-size:20px;
+
+    color:var(--sf-navy);
+}
+
+.empty-group p{
+    line-height:1.8;
+
+    color:var(--sf-text);
+}
+
+.empty-group button{
+    width:150px;
+    height:46px;
+
+    border:none;
+    border-radius:14px;
+
+    background:var(--sf-gold);
+
+    color:white;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.empty-group button:hover{
+    background:var(--sf-gold-hover);
+
+    transform:translateY(-2px);
+}
+
+
+/* =========================
+   FACILITY
+========================= */
+
+.facility-list{
+    display:flex;
+    flex-direction:column;
+
+    gap:18px;
+}
+
+.facility-item{
+    display:grid;
+    grid-template-columns:100px 50px 1fr;
+
+    align-items:center;
+
+    gap:14px;
+}
+
+.facility-item span{
+    font-weight:600;
+
+    color:var(--sf-navy);
+}
+
+.facility-item small{
+    color:var(--sf-text);
+}
+
+.bar{
+    height:8px;
+
+    background:#F2ECE3;
+
+    border-radius:999px;
+
+    overflow:hidden;
+}
+
+.bar div{
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        var(--sf-gold),
+        var(--sf-gold-hover)
+    );
+
+    border-radius:999px;
+}
+
+
+/* =========================
+   ACTIVITY
+========================= */
+
+.activity-list{
+    display:flex;
+    flex-direction:column;
+
+    gap:18px;
+}
+
+.activity-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding-bottom:14px;
+
+    border-bottom:1px solid #F3EFE8;
+}
+
+.activity-item span{
+    font-size:14px;
+
+    color:var(--sf-navy);
+}
+
+.activity-item small{
+    color:var(--sf-text);
+}
+
+.income span{
+    color:#2F8A5B;
+
+    font-weight:700;
+}
+
+
+/* =========================
+   QUICK MENU
+========================= */
+
+.quick-section{
+    margin-bottom:40px;
+}
+
+.quick-section h3{
+    margin-bottom:20px;
+
+    font-size:20px;
+    font-weight:800;
+
+    color:var(--sf-navy);
+}
+
+.quick-grid{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+
+    gap:16px;
+}
+
+.quick-card{
+    height:68px;
+
+    background:white;
+
+    border:1px solid var(--sf-border);
+    border-radius:18px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    gap:12px;
+
+    font-size:14px;
+    font-weight:700;
+
+    color:var(--sf-navy);
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.03);
+}
+
+.quick-card:hover{
+    transform:translateY(-3px);
+
+    background:white;
+
+    border-color:var(--sf-gold);
+
+    box-shadow:0 10px 25px rgba(200,164,107,.15);
+}
+
+.quick-card svg{
+    width:22px;
+    height:22px;
+
+    color:var(--sf-gold);
+}
+
+
+/* =========================
+   PAGE CONTAINER
+========================= */
+
+.page-container{
+    padding:30px;
+}
+
+.page-container h1{
+    margin-bottom:12px;
+
+    font-size:32px;
+    font-weight:800;
+
+    color:var(--sf-navy);
+}
+
+.page-container p{
+    font-size:16px;
+
+    color:var(--sf-text);
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+#mainContent::-webkit-scrollbar{
+    width:8px;
+}
+
+#mainContent::-webkit-scrollbar-thumb{
+    background:var(--sf-scroll);
+
+    border-radius:999px;
+}

@@ -1,0 +1,275 @@
+/*trainee.html*/
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STARFORGE - 연습생</title>
+
+    <link rel="stylesheet" href="trainee.css">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- 사이드바 -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>STARFORGE</h2>
+            <span>SYSTEM</span>
+        </div>
+
+        <nav class="menu">
+
+            <button>대시보드</button>
+            <button>아티스트</button>
+            <button class="active">연습생</button>
+            <button>오디션</button>
+            <button>스케줄</button>
+            <button>앨범</button>
+            <button>콘서트</button>
+            <button>재무</button>
+            <button>자료실</button>
+            <button>설정</button>
+
+        </nav>
+
+    </aside>
+
+    <!-- 메인 -->
+
+    <main class="main">
+
+        <!-- 헤더 -->
+
+        <header class="page-header">
+
+            <div>
+
+                <h1>연습생</h1>
+
+                <span>STARFORGE</span>
+
+            </div>
+
+            <div class="header-right">
+
+                <input
+                    type="text"
+                    placeholder="연습생 이름을 입력하세요"
+                >
+
+                <button>
+                    <i data-lucide="bell"></i>
+                </button>
+
+                <button>
+                    <i data-lucide="mail"></i>
+                </button>
+
+                <button>
+                    <i data-lucide="calendar-days"></i>
+                </button>
+
+            </div>
+
+        </header>
+
+        <!-- 상단 카드 -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <h4>전체 연습생</h4>
+
+                <h2>24명</h2>
+
+                <p>활동 18명 · 연습생 6명</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h4>연습생 정원</h4>
+
+                <h2>24 / 30명</h2>
+
+                <div class="progress-bar">
+                    <div class="fill"></div>
+                </div>
+
+                <p>정원 확장 가능</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h4>평균 등급</h4>
+
+                <h2>B</h2>
+
+                <p>지난 달 대비 ▲ 0.3</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h4>연습생 유지율</h4>
+
+                <h2>87.5%</h2>
+
+                <p>지난 달 대비 ▲ 5.2%</p>
+
+            </div>
+
+        </section>
+
+        <!-- 탭 -->
+
+        <section class="tabs">
+
+            <button class="active">
+                연습생 목록
+            </button>
+
+            <button>
+                등급 분포
+            </button>
+
+            <button>
+                연습 현황
+            </button>
+
+            <button>
+                성장 트렌드
+            </button>
+
+        </section>
+
+        <!-- 콘텐츠 -->
+
+        <div class="content-layout">
+
+            <!-- 왼쪽 -->
+
+            <section class="table-area">
+
+                <!-- 필터 -->
+
+                <div class="filter-bar">
+
+                    <select>
+                        <option>전체</option>
+                    </select>
+
+                    <select>
+                        <option>전체 그룹</option>
+                    </select>
+
+                    <select>
+                        <option>전체 등급</option>
+                    </select>
+
+                    <select>
+                        <option>전체 성별</option>
+                    </select>
+
+                    <select>
+                        <option>전체 연령</option>
+                    </select>
+
+                    <input
+                        type="text"
+                        placeholder="연습생 검색"
+                    >
+
+                    <button
+                        class="debut-btn"
+                        onclick="goToDebutPage()"
+                    >
+                        데뷔조 편성
+                    </button>
+
+                </div>
+
+                <!-- 테이블 -->
+
+                <table>
+
+                    <thead>
+
+                    <tr>
+
+                        <th>이름</th>
+                        <th>나이</th>
+                        <th>성별</th>
+                        <th>등급</th>
+                        <th>포지션</th>
+                        <th>소속 그룹</th>
+                        <th>입사일</th>
+                        <th>상태</th>
+                        <th>관리</th>
+
+                    </tr>
+
+                    </thead>
+
+                    <tbody id="traineeTable">
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+            <!-- 오른쪽 -->
+
+            <aside class="right-panel">
+
+                <div class="panel-card">
+
+                    <h3>최근 입사 연습생</h3>
+
+                    <div id="recentTrainees">
+
+                    </div>
+
+                </div>
+
+                <div class="panel-card">
+
+                    <h3>연습생 관리</h3>
+
+                    <div class="manage-grid">
+
+                        <button>정원 확장</button>
+                        <button>연습실 배정</button>
+                        <button>그룹 편성</button>
+                        <button>퇴출 관리</button>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="trainee.js"></script>
+
+<script>
+lucide.createIcons();
+</script>
+
+</body>
+</html>

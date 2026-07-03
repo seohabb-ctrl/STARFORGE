@@ -1,0 +1,791 @@
+/* =========================
+   STARFORGE DEBUT v2.0
+========================= */
+
+:root{
+    --sf-gold:#C8A46B;
+    --sf-gold-hover:#B8945A;
+    --sf-gold-bg:#FCF7EF;
+    --sf-navy:#1E2640;
+    --sf-text:#7D869C;
+    --sf-border:#ECE6DC;
+    --sf-card:#FFFFFF;
+    --sf-scroll:#DCCFB9;
+}
+
+
+/* =========================
+   전체 페이지
+========================= */
+
+.debut-page{
+    padding:22px;
+}
+
+
+/* =========================
+   상단 영역
+========================= */
+
+.debut-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:24px;
+}
+
+.debut-breadcrumb{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:14px;
+    font-size:13px;
+    font-weight:600;
+    color:var(--sf-text);
+}
+
+.debut-breadcrumb svg{
+    width:14px;
+    height:14px;
+}
+
+.debut-top h1{
+    margin-bottom:10px;
+    font-size:20px;
+    font-weight:800;
+    color:var(--sf-navy);
+}
+
+.debut-top p{
+    font-size:13px;
+    font-weight:600;
+    color:var(--sf-text);
+}
+
+
+/* =========================
+   진행 단계
+========================= */
+
+.debut-steps{
+    display:flex;
+    align-items:center;
+    margin-top:18px;
+}
+
+.step{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+    min-width:90px;
+    font-size:12px;
+    font-weight:700;
+    color:var(--sf-text);
+}
+
+.step-circle{
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    background:#F7F7F7;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:.2s;
+}
+
+.step.active{
+    color:var(--sf-gold);
+}
+
+.step.active .step-circle{
+    background:var(--sf-gold);
+    color:#fff;
+}
+
+.step-line{
+    width:90px;
+    height:2px;
+    background:var(--sf-border);
+    margin:0 6px;
+}
+
+
+/* =========================
+   메인 레이아웃
+========================= */
+
+.debut-content{
+    display:grid;
+    grid-template-columns:1fr 380px;
+    gap:20px;
+}
+
+
+/* =========================
+   공통 카드
+========================= */
+
+.debut-card{
+    background:var(--sf-card);
+    border:1px solid var(--sf-border);
+    border-radius:18px;
+    padding:24px;
+    box-shadow:0 6px 18px rgba(0,0,0,.03);
+}
+
+.debut-main{
+    height:calc(100vh - -75px);
+}
+
+.debut-main .debut-card{
+    height:100%;
+    display:flex;
+    flex-direction:column;
+}
+
+.debut-card h4{
+    margin-bottom:8px;
+    font-size:15px;
+    font-weight:700;
+    color:var(--sf-navy);
+}
+
+.debut-card p{
+    font-size:13px;
+    color:var(--sf-text);
+}
+
+
+/* =========================
+   카드 헤더
+========================= */
+
+.debut-card-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:22px;
+}
+
+.sort-select{
+    width:130px;
+    height:42px;
+    padding:0 14px;
+    border:1px solid var(--sf-border);
+    border-radius:12px;
+    background:#fff;
+    font-size:13px;
+    color:#5B6480;
+}
+
+.sort-select:focus{
+    outline:none;
+    border-color:var(--sf-gold);
+}
+
+
+/* =========================
+   등급 필터
+========================= */
+
+.grade-filter{
+    display:flex;
+    gap:12px;
+    margin-bottom:28px;
+}
+
+.grade-filter button{
+    height:34px;
+    padding:0 22px;
+    border:1px solid transparent;
+    border-radius:999px;
+    background:#F8F8F8;
+    color:#5B6480;
+    font-size:13px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.grade-filter button:hover{
+    border-color:rgba(200,164,107,.3);
+}
+
+.grade-filter button.active{
+    background:var(--sf-gold-bg);
+    border-color:rgba(200,164,107,.2);
+    color:var(--sf-gold);
+}
+
+
+/* =========================
+   연습생 카드 영역
+========================= */
+
+.trainee-card-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+    max-height:600px;
+    overflow-y:auto;
+    padding-right:8px;
+}
+
+.trainee-card-grid::-webkit-scrollbar{
+    width:8px;
+}
+
+.trainee-card-grid::-webkit-scrollbar-thumb{
+    background:var(--sf-scroll);
+    border-radius:999px;
+}
+
+.dummy-card{
+    grid-column:1/5;
+    height:500px;
+    border:2px dashed var(--sf-border);
+    border-radius:18px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:var(--sf-text);
+    font-size:14px;
+}
+
+
+/* =========================
+   우측 패널
+========================= */
+
+.debut-side{
+    height:calc(100vh - 180px);
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+
+/* =========================
+   데뷔조 현황
+========================= */
+
+.selected-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.selected-header span{
+    color:var(--sf-gold);
+    font-size:14px;
+    font-weight:700;
+}
+
+.empty-selected{
+    height:220px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:var(--sf-text);
+    font-size:13px;
+}
+
+
+/* =========================
+   그룹 정보
+========================= */
+
+.group-form{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.group-form label{
+    display:block;
+    margin-bottom:8px;
+    font-size:13px;
+    font-weight:700;
+    color:var(--sf-navy);
+}
+
+.group-form input,
+.group-form select{
+    width:100%;
+    height:42px;
+    padding:0 14px;
+    border:1px solid var(--sf-border);
+    border-radius:12px;
+    font-size:13px;
+    background:#fff;
+}
+
+.group-form input:focus,
+.group-form select:focus{
+    outline:none;
+    border-color:var(--sf-gold);
+    box-shadow:0 0 0 3px rgba(200,164,107,.12);
+}
+
+.next-step-btn{
+    width:100%;
+    height:44px;
+    margin-top:10px;
+    border:none;
+    border-radius:12px;
+    background:var(--sf-gold);
+    color:#fff;
+    font-size:14px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.2s;
+    box-shadow:0 4px 12px rgba(200,164,107,.18);
+}
+
+.next-step-btn:hover{
+    background:var(--sf-gold-hover);
+    transform:translateY(-1px);
+}
+
+/* =========================
+   안내사항
+========================= */
+
+.guide-box{
+    margin-top:24px;
+    padding:18px;
+    background:var(--sf-gold-bg);
+    border:1px solid rgba(200,164,107,.15);
+    border-radius:14px;
+}
+
+.guide-box strong{
+    display:block;
+    margin-bottom:12px;
+    font-size:14px;
+    color:var(--sf-navy);
+}
+
+.guide-box ul{
+    padding-left:18px;
+    margin:0;
+}
+
+.guide-box li{
+    margin-bottom:8px;
+    font-size:13px;
+    color:#5B6480;
+}
+
+
+/* =========================
+   연습생 카드
+========================= */
+
+.debut-trainee-card{
+    padding:18px;
+    background:#fff;
+    border:1px solid var(--sf-border);
+    border-radius:18px;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.debut-trainee-card:hover{
+    transform:translateY(-3px);
+    border-color:var(--sf-gold);
+    box-shadow:0 8px 20px rgba(200,164,107,.12);
+}
+
+.debut-trainee-card.selected{
+    border:2px solid var(--sf-gold);
+    background:var(--sf-gold-bg);
+    box-shadow:0 10px 24px rgba(200,164,107,.18);
+}
+
+.card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+}
+
+.card-top strong{
+    font-size:15px;
+    color:var(--sf-navy);
+}
+
+.grade-badge{
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    background:var(--sf-gold);
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:13px;
+    font-weight:700;
+}
+
+.card-info{
+    font-size:12px;
+    color:var(--sf-text);
+    margin-bottom:18px;
+}
+
+.stat-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:10px;
+}
+
+.stat-row span{
+    width:45px;
+    font-size:12px;
+    color:#5B6480;
+}
+
+.stat-row strong{
+    font-size:12px;
+    min-width:28px;
+    text-align:right;
+}
+
+.mini-bar{
+    flex:1;
+    height:6px;
+    background:#F2ECE3;
+    border-radius:999px;
+    overflow:hidden;
+}
+
+.mini-bar div{
+    height:100%;
+    background:linear-gradient(90deg,var(--sf-gold),var(--sf-gold-hover));
+}
+
+
+/* =========================
+   선택된 멤버
+========================= */
+
+.selected-card{
+    height:315px;
+    display:flex;
+    flex-direction:column;
+    flex-shrink:0;
+    overflow:hidden;
+}
+
+.selected-members{
+    height:100%;
+    overflow-y:auto;
+    padding-right:6px;
+}
+
+.selected-members::-webkit-scrollbar{
+    width:6px;
+}
+
+.selected-members::-webkit-scrollbar-thumb{
+    background:var(--sf-scroll);
+    border-radius:999px;
+}
+
+.selected-member{
+    padding:14px;
+    background:var(--sf-gold-bg);
+    border:1px solid rgba(200,164,107,.15);
+    border-radius:12px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.selected-member strong{
+    font-size:13px;
+    color:var(--sf-navy);
+}
+
+.selected-member span{
+    font-size:12px;
+    color:var(--sf-gold);
+    font-weight:700;
+}
+
+
+/* =========================
+   등급 뱃지
+========================= */
+
+.card-grade{
+    width:28px;
+    height:28px;
+    margin-top:8px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:12px;
+    font-weight:700;
+    color:#fff;
+}
+
+.grade-S{
+    background:linear-gradient(135deg,#D4B17D,#B8945A);
+}
+
+.grade-A{
+    background:#C8A46B;
+}
+
+.grade-B{
+    background:#8B7355;
+}
+
+.grade-C{
+    background:#B9A58C;
+}
+
+.grade-D{
+    background:#CFC8BD;
+    color:#5B6480;
+}
+
+
+/* =========================
+   체크 아이콘
+========================= */
+
+.card-check{
+    width:28px;
+    height:28px;
+    border:2px solid var(--sf-border);
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:13px;
+    font-weight:700;
+    color:transparent;
+    transition:.2s;
+}
+
+.card-check.active{
+    background:var(--sf-gold);
+    border-color:var(--sf-gold);
+    color:#fff;
+    box-shadow:0 4px 12px rgba(200,164,107,.25);
+}
+
+
+/* =========================
+   예명 설정
+========================= */
+
+.stage-name-box{
+    margin-top:14px;
+}
+
+.stage-name-header{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    margin-bottom:8px;
+}
+
+.stage-name-header span{
+    font-size:12px;
+    font-weight:700;
+    color:var(--sf-navy);
+}
+
+.stage-name-header svg{
+    width:14px;
+    height:14px;
+    color:var(--sf-text);
+}
+
+.stage-name-input{
+    width:100%;
+    height:38px;
+    padding:0 12px;
+    border:1px solid var(--sf-border);
+    border-radius:10px;
+    font-size:12px;
+    background:#fff;
+    transition:.2s;
+}
+
+.stage-name-input:focus{
+    outline:none;
+    border-color:var(--sf-gold);
+    box-shadow:0 0 0 3px rgba(200,164,107,.12);
+}
+
+.stage-name-count{
+    margin-top:6px;
+    text-align:right;
+    font-size:11px;
+    color:var(--sf-text);
+}
+
+
+/* =========================
+   데뷔 정보 안내
+========================= */
+
+.debut-guide-box{
+    margin-top:18px;
+    padding:16px;
+    background:var(--sf-gold-bg);
+    border:1px solid rgba(200,164,107,.15);
+    border-radius:14px;
+}
+
+.debut-guide-box strong{
+    display:block;
+    margin-bottom:12px;
+    font-size:13px;
+    font-weight:700;
+    color:var(--sf-navy);
+}
+
+.debut-guide-box ul{
+    margin:0;
+    padding-left:18px;
+}
+
+.debut-guide-box li{
+    margin-bottom:8px;
+    font-size:12px;
+    line-height:1.6;
+    color:#5B6480;
+}
+
+.debut-guide-box li:last-child{
+    margin-bottom:0;
+}
+
+
+/* =========================
+   최종 확인 페이지
+========================= */
+
+.debut-confirm-page{
+    max-width:900px;
+    margin:0 auto;
+    padding:40px;
+}
+
+.confirm-header{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.confirm-header h1{
+    font-size:40px;
+    font-weight:800;
+    color:var(--sf-navy);
+    margin-bottom:12px;
+}
+
+.confirm-header p{
+    font-size:18px;
+    color:var(--sf-gold);
+    margin-bottom:8px;
+}
+
+.confirm-header span{
+    font-size:14px;
+    color:var(--sf-text);
+}
+
+.confirm-members{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    margin-bottom:40px;
+}
+
+.confirm-member-card{
+    padding:24px;
+    background:#fff;
+    border:1px solid var(--sf-border);
+    border-radius:18px;
+}
+
+.confirm-member-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:12px;
+}
+
+.confirm-member-top h3{
+    font-size:20px;
+    color:var(--sf-navy);
+    margin-bottom:4px;
+}
+
+.confirm-member-top small{
+    color:var(--sf-text);
+}
+
+.confirm-position{
+    padding:8px 14px;
+    background:var(--sf-gold-bg);
+    border-radius:999px;
+    color:var(--sf-gold);
+    font-size:13px;
+    font-weight:700;
+}
+
+.confirm-info{
+    font-size:14px;
+    color:#5B6480;
+}
+
+.confirm-buttons{
+    display:flex;
+    justify-content:center;
+    gap:16px;
+}
+
+.back-btn,
+.debut-btn{
+    width:180px;
+    height:50px;
+    border:none;
+    border-radius:14px;
+    font-size:15px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.back-btn{
+    background:#F4F1EC;
+    color:#5B6480;
+}
+
+.back-btn:hover{
+    background:#ECE6DC;
+}
+
+.debut-btn{
+    background:var(--sf-gold);
+    color:#fff;
+    box-shadow:0 6px 16px rgba(200,164,107,.18);
+}
+
+.debut-btn:hover{
+    background:var(--sf-gold-hover);
+    transform:translateY(-2px);
+}

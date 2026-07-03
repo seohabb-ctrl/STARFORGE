@@ -1,0 +1,70 @@
+#loadingScreen{
+    position:fixed;
+    inset:0;
+
+    display:none;
+    justify-content:center;
+    align-items:center;
+
+    background:url("../assets/images/login-bg.jpg")
+    center/cover no-repeat;
+
+    z-index:9999;
+}
+
+#loadingScreen::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:rgba(0,0,0,.7);
+    backdrop-filter:blur(10px);
+}
+
+.loadingCard{
+    position:relative;
+    z-index:2;
+
+    width:500px;
+    padding:50px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(30px);
+
+    color:white;
+    text-align:center;
+}
+
+.loadingCard h1{font-size:48px;letter-spacing:8px;margin-bottom:20px}
+.loadingCard p{opacity:.8;margin-bottom:40px}
+
+.loadingBar{
+    width:100%;
+    height:8px;
+
+    background:rgba(255,255,255,.15);
+    border-radius:999px;
+
+    overflow:hidden;
+    position:relative;
+}
+
+#loadingFill{
+    width:0%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #8f7cff,
+        #b99cff
+    );
+
+    border-radius:999px;
+    transition:width .8s ease;
+}
+
+#app{display:none}
+
+#loadingPercent{margin-top:20px;font-size:20px;font-weight:700;letter-spacing:2px;color:#fff}

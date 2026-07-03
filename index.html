@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>STARFORGE</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="css/loading.css">
+<link rel="stylesheet" href="css/sidebar.css">
+<link rel="stylesheet" href="css/dashboard.css">
+<link rel="stylesheet" href="pages/trainee/trainee.css">
+<link rel="stylesheet" href="pages/audition/audition.css">
+<link rel="stylesheet" href="pages/artist/artist.css">
+<link rel="stylesheet" href="pages/debut/debut.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+/>
+</head>
+
+<body>
+
+<!-- 로그인 화면 -->
+<div id="startScreen">
+
+<div class="overlay"></div>
+
+<div class="login-layout">
+
+    <!-- 왼쪽 브랜드 -->
+    <div class="hero-section">
+
+        <div class="hero-logo">
+
+            <div class="star-logo">
+                <img src="./assets/images/logo.svg">
+            </div>
+
+            <h1>STARFORGE</h1>
+            <h2>ENTERTAINMENT</h2>
+
+            <p class="hero-en">
+                WE CREATE STARS, CONNECT DREAMS
+            </p>
+
+            <p class="hero-ko">
+                스타포지 엔터테인먼트와 함께<br>
+                당신의 꿈을 현실로 만들어보세요.
+            </p>
+
+        </div>
+
+        <div class="feature-bar">
+
+            <div class="feature-item">
+                <i data-lucide="star"></i>
+                <span>ARTIST MANAGEMENT</span>
+                <small>아티스트 관리</small>
+            </div>
+
+            <div class="feature-item">
+                <i data-lucide="mic"></i>
+                <span>ALBUM & CONTENT</span>
+                <small>앨범 / 콘텐츠 제작</small>
+            </div>
+
+            <div class="feature-item">
+                <i data-lucide="presentation"></i>
+                <span>CONCERT & TOUR</span>
+                <small>콘서트 / 투어</small>
+            </div>
+
+            <div class="feature-item">
+                <i data-lucide="chart-no-axes-column"></i>
+                <span>COMPANY GROWTH</span>
+                <small>회사 성장</small>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- 오른쪽 로그인 -->
+    <div class="login-card">
+
+        <div class="logo-box">
+            <img src="./assets/images/logo.svg">
+        </div>
+
+        <h1 class="logoTitle">
+            <span class="main-title">STARFORGE</span>
+            <span class="sub-title">SYSTEM</span>
+        </h1>
+
+        <div class="subtitle">
+            <div class="line"></div>
+            로그인하세요
+            <div class="line"></div>
+        </div>
+
+        <label>회사명</label>
+
+        <div class="input-box">
+            <i data-lucide="building-2"></i>
+            <input
+                type="text"
+                id="companyName"
+                placeholder="회사 이름을 입력하세요"
+                value="STARFORGE"
+            >
+        </div>
+
+        <label>CEO 이름</label>
+
+        <div class="input-box">
+            <i data-lucide="user"></i>
+            <input
+                type="text"
+                id="ceoName"
+                placeholder="CEO 이름을 입력하세요"
+                value="MOON"
+            >
+        </div>
+
+        <button id="startBtn">
+            <span>새 게임 시작</span>
+            <i data-lucide="arrow-right"></i>
+        </button>
+
+        <button id="loadBtn" onclick="openContinueModal()">
+            <span>이어하기</span>
+            <i data-lucide="arrow-right"></i>
+        </button>
+
+        <div class="social-icons">
+
+            <i class="fa-brands fa-x-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-youtube"></i>
+            <i class="fa-brands fa-tiktok"></i>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="copyright">
+    © 2026 STARFORGE ENTERTAINMENT. ALL RIGHTS RESERVED.
+</div>
+
+</div>
+
+<!-- 로딩 화면 -->
+<div id="loadingScreen">
+
+    <div class="loadingCard">
+
+        <h1>STARFORGE</h1>
+
+        <p id="loadingText">
+            회사를 설립하는 중...
+        </p>
+
+        <div class="loadingBar">
+            <div id="loadingFill"></div>
+        </div>
+
+        <div id="loadingPercent">
+            0%
+        </div>
+
+    </div>
+
+</div>
+
+<!-- 실제 게임 화면 -->
+<div id="app" style="display:none;">
+
+    <!-- 사이드바 -->
+    <aside id="sidebar">
+
+    <!-- 로고 -->
+    <div class="sidebar-logo">
+
+        <img
+            src="./assets/images/logo.svg"
+            alt="STARFORGE"
+        >
+
+        <h1>STARFORGE</h1>
+
+        <span>SYSTEM</span>
+
+    </div>
+
+
+    <!-- 메뉴 -->
+    <nav class="sidebar-menu">
+
+        <button class="menu-item active" data-page="dashboard">
+            <i data-lucide="house"></i>
+            <span>대시보드</span>
+        </button>
+
+        <button class="menu-item" data-page="artist">
+            <i data-lucide="users"></i>
+            <span>아티스트</span>
+        </button>
+
+        <button class="menu-item" data-page="debut">
+            <i data-lucide="folder-open"></i>
+            <span>데뷔조 편성</span>
+        </button>
+
+        <button class="menu-item" data-page="trainee">
+            <i data-lucide="user-plus"></i>
+            <span>연습생</span>
+        </button>
+
+        <button class="menu-item" data-page="audition">
+            <i data-lucide="mic-2"></i>
+            <span>오디션</span>
+        </button>
+
+        <button class="menu-item" data-page="schedule">
+            <i data-lucide="calendar-days"></i>
+            <span>스케줄</span>
+        </button>
+
+        <button class="menu-item" data-page="album">
+            <i data-lucide="disc-3"></i>
+            <span>앨범</span>
+        </button>
+
+        <button class="menu-item" data-page="concert">
+            <i data-lucide="music-4"></i>
+            <span>콘서트</span>
+        </button>
+
+        <button class="menu-item" data-page="finance">
+            <i data-lucide="landmark"></i>
+            <span>재무</span>
+        </button>
+
+        <button class="menu-item" data-page="setting">
+            <i data-lucide="settings"></i>
+            <span>설정</span>
+        </button>
+
+        <div class="sidebar-divider"></div>
+
+        <button class="menu-item" id="nextMonthBtn">
+            <i data-lucide="calendar-plus"></i>
+            <span>다음 달 진행</span>
+        </button>
+
+        <button class="menu-item" onclick="manualSave()">
+            저장하기
+
+        </button>
+
+    </nav>
+
+
+    <!-- 하단 프로필 -->
+<div class="sidebar-bottom">
+
+    <div class="ceo-card">
+
+        <img
+            src="./assets/images/ceo.png"
+            class="ceo-avatar"
+        >
+
+        <div>
+
+            <strong id="sidebarCEOName">
+                CEO. MOON
+            </strong>
+
+            <span id="sidebarCEOId"></span>
+
+        </div>
+
+    </div>
+
+    <div class="status-item money">
+
+        <small>자금</small>
+
+        <strong id="sidebarMoney">
+            ₩50,000,000
+        </strong>
+
+    </div>
+
+    <button
+class="logout-btn"
+onclick="openLogoutModal()"
+>
+
+<i data-lucide="log-out"></i>
+
+로그아웃
+
+</button>
+
+</div>
+
+</aside>
+
+    <!-- 메인 -->
+    <main id="mainContent">
+
+        <!-- 실제 화면은 다음 단계에서 추가 -->
+
+    </main>
+
+</div>
+
+<!-- 모달 -->
+<div id="modalArea">
+
+    <!-- 로그아웃 모달 -->
+    <div id="logoutModal" class="game-modal">
+
+        <div class="game-modal-content">
+
+            <h2>
+                로그아웃 확인
+            </h2>
+
+            <p>
+                현재 게임을 종료하고<br>
+                로그인 화면으로 이동하시겠습니까?
+            </p>
+
+            <div class="game-modal-buttons">
+
+                <button
+                class="cancel-btn"
+                onclick="closeLogoutModal()"
+                >
+                    취소
+                </button>
+
+                <button
+                class="confirm-btn"
+                onclick="logoutGame()"
+                >
+                    확인
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- 이어하기 모달 -->
+    <div id="continueModal" class="game-modal">
+
+        <div class="continue-modal-content">
+
+            <h2>
+                이어하기
+            </h2>
+
+            <div id="saveList"></div>
+
+            <div class="continue-footer">
+
+                <button
+                class="cancel-btn"
+                onclick="closeContinueModal()"
+                >
+                    닫기
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div
+id="deleteSaveModal"
+class="game-modal"
+>
+
+<div class="game-modal-content">
+
+<h2>
+
+⚠ 저장 삭제
+
+</h2>
+
+<p>
+
+정말 삭제하시겠습니까?<br>
+삭제한 데이터는 복구할 수 없습니다.
+
+</p>
+
+<div class="game-modal-buttons">
+
+<button
+class="cancel-btn"
+onclick="closeDeleteSaveModal()"
+>
+
+취소
+
+            </button>
+
+                <button
+                class="delete-confirm-btn"
+                onclick="confirmDeleteSave()">
+
+                삭제
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+
+    <div
+id="nextMonthModal"
+class="game-modal"
+>
+
+<div class="game-modal-content">
+
+<h2>
+
+📅 다음 달 진행 완료
+
+</h2>
+
+<p id="nextMonthText">
+
+2개월차로 진행되었습니다!
+
+</p>
+
+<div class="game-modal-buttons">
+
+<button
+class="confirm-btn"
+onclick="closeNextMonthModal()"
+>
+
+확인
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- JS -->
+<script src="data/company.js"></script>
+<script src="systems/finance.js"></script>
+
+<script src="data/names.js"></script>
+<script src="data/trainee.js"></script>
+
+<script src="systems/album.js"></script>
+<script src="systems/concert.js"></script>
+<script src="systems/schedule.js"></script>
+<script src="systems/bank.js"></script>
+
+<script src="pages/dashboard.js"></script>
+<script src="pages/trainee/trainee.js"></script>
+<script src="pages/audition/audition.js"></script>
+<script src="pages/artist/artist.js"></script>
+<script src="pages/debut/debut.js"></script>
+<script src="pages/album.js"></script>
+<script src="pages/schedule.js"></script>
+
+<script src="main.js"></script>
+
+</body>
+</html>

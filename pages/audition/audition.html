@@ -1,0 +1,296 @@
+<div class="audition-page">
+
+    <!-- 헤더 -->
+    <div class="audition-header">
+
+        <div>
+
+            <h1>오디션</h1>
+
+            <p>
+                새로운 스타를 발굴하고 우리 회사의 미래를 만들어보세요.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- 상단 영역 -->
+    <div class="audition-top">
+
+        <!-- 오디션 진행 -->
+        <div class="audition-main-card">
+
+            <div class="audition-main-header">
+
+    <div class="audition-tabs">
+
+        <button
+    id="auditionTabBtn"
+    class="active"
+    onclick="showAuditionTab()"
+>
+    오디션
+</button>
+
+        <button
+    id="scoutTabBtn"
+    onclick="showScoutTab()"
+>
+    스카우트
+</button>
+
+    </div>
+
+    <div class="ap-badge">
+        보유 AP 12
+    </div>
+
+</div>
+
+<div id="auditionContent">
+
+    <div class="audition-list">
+
+        <!-- 지역 -->
+
+        <div class="audition-card local">
+
+                    <div class="audition-icon">
+                        <i data-lucide="map-pin"></i>
+                    </div>
+
+                    <h4>지역 오디션</h4>
+
+                    <p>
+    내 주변의 숨은 재능을 발굴합니다.
+</p>
+
+<div class="audition-tags">
+
+    <span class="tag-green">
+        쿨타임 없음
+    </span>
+
+    <span class="tag-blue">
+        월 3회 가능
+    </span>
+
+</div>
+
+<button onclick="startAudition('local')">
+    오디션 진행
+</button>
+
+<small>
+    소모 AP 2
+</small>
+
+                </div>
+
+
+                <!-- 전국 -->
+                <div class="audition-card national">
+
+                    <div class="audition-icon">
+                        <i data-lucide="building-2"></i>
+                    </div>
+
+                    <h4>전국 오디션</h4>
+
+                    <p>
+    전국 단위로 유망한 인재를 찾습니다.
+</p>
+
+<div class="audition-tags">
+
+    <span class="tag-orange">
+        3개월 쿨타임
+    </span>
+
+    <span class="tag-blue">
+        우수 이상 확률↑
+    </span>
+
+</div>
+
+                    <button onclick="startAudition('national')">
+    오디션 진행
+</button>
+
+                    <small>
+                        소모 AP 5
+                    </small>
+
+                </div>
+
+
+                <!-- 글로벌 -->
+                <div class="audition-card global">
+
+                    <div class="audition-icon">
+                        <i data-lucide="globe"></i>
+                    </div>
+
+                    <h4>글로벌 오디션</h4>
+
+                    <p>
+    전 세계에서 최고의 인재를 찾습니다.
+</p>
+
+<div class="audition-tags">
+
+    <span class="tag-red">
+        6개월 쿨타임
+    </span>
+
+    <span class="tag-purple">
+        엘리트 확률↑
+    </span>
+
+</div>
+
+                    <button onclick="startAudition('global')">
+    오디션 진행
+</button>
+
+                    <small>
+                        소모 AP 10
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+        <!-- 오디션 정보 -->
+        <div class="info-card">
+
+    <h3>오디션 정보</h3>
+
+    <div class="info-list">
+
+        <div class="info-item">
+            <span>지역 오디션</span>
+            <strong class="ready">진행 가능</strong>
+        </div>
+
+        <div class="info-item">
+            <span>전국 오디션</span>
+            <strong class="cooldown">D-90</strong>
+        </div>
+
+        <div class="info-item">
+            <span>글로벌 오디션</span>
+            <strong class="cooldown">D-180</strong>
+        </div>
+
+        <div class="info-item">
+            <span>이번 달 참가자</span>
+            <strong>14명</strong>
+        </div>
+
+        <div class="info-item">
+            <span>발굴 성공</span>
+            <strong>6명</strong>
+        </div>
+
+    </div>
+
+</div>
+
+    </div>
+
+
+    <!-- 하단 영역 -->
+    <div class="audition-content">
+
+        <!-- 오디션 기록 -->
+        <div class="history-card">
+
+    <h3>오디션 기록</h3>
+
+    <div class="history-table-wrap">
+
+        <table class="history-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>날짜</th>
+                    <th>오디션</th>
+                    <th>참가자</th>
+                    <th>합격자</th>
+                    <th>최고 등급</th>
+                    <th>상태</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td colspan="6" class="empty-history">
+
+                        아직 진행된 오디션이 없습니다.
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+        <!-- 우측 -->
+        <div class="audition-side">
+
+            <div class="tip-card">
+
+    <h3>오디션 팁</h3>
+
+    <ul class="tip-list">
+
+        <li>
+            🎤 전국 오디션은 우수 등급 이상 확률이 높습니다.
+        </li>
+
+        <li>
+            🌎 글로벌 오디션은 엘리트 연습생 등장 확률이 높습니다.
+        </li>
+
+    </ul>
+
+</div>
+
+
+            <section class="scout-card">
+
+    <h3>
+        스카우트 결과
+    </h3>
+
+    <div id="scoutResultArea">
+
+    </div>
+
+    </section>
+
+</div>
+
+</div>
+
+</div>

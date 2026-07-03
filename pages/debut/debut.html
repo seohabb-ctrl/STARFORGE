@@ -1,0 +1,101 @@
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../css/sidebar.css">
+<link rel="stylesheet" href="./debut.css">
+
+<div class="debut-page">
+
+    <div class="debut-header">
+
+        <div>
+            <div class="breadcrumb">
+                연습생 > 데뷔조 편성
+            </div>
+
+            <h1>데뷔조 편성</h1>
+
+            <p>
+                데뷔조에 포함할 연습생을 선택하고 포지션을 배정하세요.
+            </p>
+        </div>
+
+        <div class="step-area">
+
+            <div class="step active">
+                <span>1</span>
+                멤버 선택
+            </div>
+
+            <div class="step">
+                <span>2</span>
+                포지션 배정
+            </div>
+
+            <div class="step">
+                <span>3</span>
+                편성 완료
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="debut-container">
+
+        <div class="debut-left">
+
+            <div class="section-title">
+                연습생 목록
+            </div>
+
+            <div id="debutTraineeGrid">
+
+            </div>
+
+        </div>
+
+
+        <div class="debut-right">
+
+            <div class="selected-header">
+
+                <h3>데뷔조 현황</h3>
+
+                <span id="selectedCount">
+                    0 / 12명
+                </span>
+
+            </div>
+
+
+            <div id="selectedList">
+
+            </div>
+
+
+            <div class="debut-info">
+
+                <label>그룹명</label>
+
+                <input
+                    id="groupName"
+                    placeholder="그룹명을 입력하세요"
+                >
+
+                <button
+                    class="next-btn"
+                    onclick="createDebutGroup()"
+                >
+                    다음 단계로
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="../../data/company.js"></script>
+<script src="./debut.js"></script>
