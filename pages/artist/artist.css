@@ -676,3 +676,72 @@ transition:.2s;
 .group-color-setting button:hover{
 background:#B8945A;
 }
+
+.artist-empty{
+width:420px;
+margin:80px auto;
+padding:50px 40px;
+background:#fff;
+border:1px solid var(--sf-border);
+border-radius:24px;
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+box-shadow:0 8px 24px rgba(0,0,0,.04);
+}
+
+.artist-empty-icon{
+width:70px;
+height:70px;
+background:var(--sf-gold-bg);
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+margin-bottom:20px;
+color:var(--sf-gold);
+}
+
+.artist-empty-icon svg{
+width:32px;
+height:32px;
+}
+
+.artist-empty-label{
+font-size:11px;
+font-weight:700;
+letter-spacing:2px;
+color:#B6A58A;
+margin-bottom:14px;
+}
+
+.artist-empty h2{
+font-size:28px;
+font-weight:700;
+color:var(--sf-navy);
+margin-bottom:14px;
+}
+
+.artist-empty p{
+font-size:15px;
+line-height:1.7;
+color:var(--sf-text);
+margin-bottom:30px;
+}
+
+.artist-empty button{
+padding:12px 28px;
+border:none;
+border-radius:12px;
+background:var(--sf-gold);
+color:white;
+font-weight:600;
+cursor:pointer;
+transition:.2s;
+}
+
+.artist-empty button:hover{
+background:var(--sf-gold-hover);
+transform:translateY(-2px);
+}

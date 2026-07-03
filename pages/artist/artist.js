@@ -57,17 +57,26 @@ grid.innerHTML=`
 
 <div class="empty-artist">
 
-<h2>
+<div class="artist-empty">
+    <div class="artist-empty-icon">
+        <i data-lucide="mic-vocal"></i>
+    </div>
 
-아직 데뷔한 그룹이 없습니다.
+    <span class="artist-empty-label">
+        YOUR FIRST ARTIST
+    </span>
 
-</h2>
+    <h2>아직 데뷔한 그룹이 없습니다</h2>
 
-<p>
+    <p>
+        데뷔조 편성 탭에서<br>
+        새로운 그룹을 만들어보세요.
+    </p>
 
-데뷔조 편성 탭에서 그룹을 만들어보세요.
-
-</p>
+    <button onclick="renderDebutPage()">
+        그룹 생성하기
+    </button>
+</div>
 
 </div>
 
