@@ -745,3 +745,11 @@ transition:.2s;
 background:var(--sf-gold-hover);
 transform:translateY(-2px);
 }
+
+.artist-empty-wrap{
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:500px;
+width:100%;
+}

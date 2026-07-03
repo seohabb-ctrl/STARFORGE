@@ -57,6 +57,8 @@ grid.innerHTML=`
 
 <div class="empty-artist">
 
+<div class="artist-empty-wrap">
+
 <div class="artist-empty">
     <div class="artist-empty-icon">
         <i data-lucide="mic-vocal"></i>
